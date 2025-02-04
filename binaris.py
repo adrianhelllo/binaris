@@ -1,7 +1,11 @@
 #Hetessy Adrián
 
+print("Üdvözöllek! Ez a kód decimális számot binárisra, és vissza tud átváltani. 😄")
+print("Csak pozitiv egész számokkal működik! ✅")
+
+
 def binarytodecimal():
-    inputSzam = input("Enter your binary number here:  ")
+    inputSzam = input("Ird ide bináris számodat:  ")
 
     digits = list(inputSzam)
     digits.reverse()
@@ -17,14 +21,14 @@ def binarytodecimal():
         if digit == '1':
             runningSum += 2 ** i
         elif digit != '0':
-            print("Your input is invalid.")
+            print("Érvénytelen bevitel.")
             break
         i += 1
 
-    print(f"Your number in decimal is {runningSum}")
+    print(f"A számod decimálisban {runningSum}")
 
 def decimaltobinary():
-    inputNum = int(input("Enter your decimal number here:  "))
+    inputNum = int(input("Ird ide decimális számodat:  "))
     list = []
 
     while inputNum > 0:
@@ -32,16 +36,18 @@ def decimaltobinary():
         list.append(r)
         inputNum //= 2
     list.reverse()
-    print(f"Your number in binary is {''.join(str(remainder) for remainder in list)}")
+    print(f"A számod binárisban {''.join(str(remainder) for remainder in list)}")
 
-choice = int(input("Enter \"1\" for Decimal -> Binary || Enter \"2\" for Binary -> Decimal:   "))
+choice = int(input("Ird be a  \"1\" számot: decimális -> bináris || Ird be a \"2\" számot: bináris -> decimális:   "))
 
 if choice == 1:
     decimaltobinary()
 elif choice == 2:
     binarytodecimal()
 else:
-    print("Invalid choice")
+    print("Érvénytelen választás.")
+
+print("Köszönöm, hogy kipróbáltad programomat! 😄")
 
 
 
